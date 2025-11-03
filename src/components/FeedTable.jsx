@@ -7,7 +7,7 @@ import {
   createColumnHelper,
 } from '@tanstack/react-table'
 
-const API_URL = 'http://130.61.77.93:50940/api/developer/QueryFeed'
+const API_URL = '/api/developer/QueryFeed' // Uses Netlify function proxy in production, vite proxy in development
 const DEVELOPER_KEY = 'usearch-dev-2025'
 
 const DEFAULT_PAGE_SIZE = 50

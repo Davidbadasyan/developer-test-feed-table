@@ -10,8 +10,8 @@
     Strict-Transport-Security = "max-age=31536000; includeSubDomains"
 
 [[redirects]]
-  from = "/api/developer/QueryFeed"
-  to = "/.netlify/functions/feed-proxy"
+  from = "/.netlify/functions/feed-proxy"
+  to = "/api/developer/QueryFeed"
   status = 200
   force = true
 

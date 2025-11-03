@@ -7,7 +7,9 @@ import {
   createColumnHelper,
 } from '@tanstack/react-table'
 
-const API_URL = '/api/developer/QueryFeed' // Uses Netlify function proxy in production, vite proxy in development
+const API_URL = import.meta.env.PROD
+  ? '/.netlify/functions/feed-proxy' // production: call the Netlify Function directly
+  : '/api/developer/QueryFeed'       // development: use Vite proxy
 const DEVELOPER_KEY = 'usearch-dev-2025'
 
 const DEFAULT_PAGE_SIZE = 50

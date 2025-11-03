@@ -3,6 +3,12 @@
   publish = "dist"
   functions = "netlify/functions"
 
+# Force HTTPS for all requests
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+
 [[redirects]]
   from = "/api/developer/QueryFeed"
   to = "/.netlify/functions/feed-proxy"

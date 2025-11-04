@@ -2,6 +2,8 @@
 
 A responsive React app that fetches data from an API and displays it in a clean, paginated table using `@tanstack/react-table` and `@tanstack/react-query`.
 
+🔗 **[Live Demo](https://feed-table.netlify.app/)**
+
 ## Features
 - **Server-side pagination** via POST `/api/developer/QueryFeed`
 - **Smart caching** with React Query for better performance and request deduplication

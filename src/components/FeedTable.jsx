@@ -298,7 +298,13 @@ export default function FeedTable() {
             ))}
           </thead>
           <tbody>
-            {error ? (
+            {(!hasLoadedOnce || isLoading) ? (
+              <tr>
+                <td colSpan={Math.max(1, visibleCols)} className="center">
+                  Loading…
+                </td>
+              </tr>
+            ) : error ? (
               <tr>
                 <td colSpan={Math.max(1, visibleCols)} className="error">
                   {error}

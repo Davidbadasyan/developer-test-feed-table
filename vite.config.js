@@ -1,9 +1,7 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  // Use '/' by default (Netlify/localhost). For GitHub Pages builds,
-  // set env VITE_TARGET=pages to use the repo subpath.
-  base: process.env.VITE_TARGET === 'pages' ? '/developer-test-feed-table/' : '/',
+  base: '/',
   server: {
     port: 5173,
     proxy: {

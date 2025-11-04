@@ -68,11 +68,28 @@ const isUrl = (str) => {
   }
 }
 
+// Helper: Format nested object values
+const formatObjectValue = (obj) => {
+  if (!obj || typeof obj !== 'object') return null
+  
+  // Check for nested structure with Type/SubType pattern
+  const values = Object.values(obj).filter(v => v !== null && v !== '')
+  if (values.length === 0) return null
+  
+  // Format as: value1 - value2
+  return values.join(' - ')
+}
+
 // Helper: Render cell value with URL detection
 const renderCellValue = (value) => {
   if (value === null || value === undefined) return ''
   
   if (typeof value === 'object') {
+    // Try to format nested objects nicely
+    const formatted = formatObjectValue(value)
+    if (formatted) return formatted
+    
+    // Fallback to JSON
     try {
       return JSON.stringify(value)
     } catch {
